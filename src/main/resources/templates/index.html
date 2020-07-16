@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Logs Que Joraca Pasa </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron" mt-5>
+            <h1 class="display-4">Que joraca pasa!</h1>
+            <p class="lead">Simple control de Logs para saber que esta pasando. d;P</p>
+            <hr class="my-4">
+            <p>Preciona el boton para listar los logs ingresados o borra el historial, tambien podes usar un cliente rest como <a href="https://insomnia.rest/">Insomnia</a>, <a href="https://www.postman.com/">Postman</a>, etc. </p>
+            <a th:href="@{/list}"><button type="button" class="btn btn-success btn-lg btn-block">Listar Logs</button></a> <br>
+            <a th:href="@{/delall}"><button type="button" class="btn btn-danger btn-lg btn-block">Borrar Historial</button></a>
+            <hr class="my-4">
+            <div class="card" style="width: 100%;">
+                <div class="card-header">
+                    <h3 class="center">Url para Rest</h3>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">[GET] /logger/list - Listar todos los logs</li>
+                    <li class="list-group-item">[POST] /logger/add - Para agregar un Logs en formato Json ||
+                        <b>Ejemplo:</b>
+                        {
+                        "clave": "String",
+                        "valor": "String",
+                        "opcional": "String"
+                        }
+                    </li>
+                    <li class="list-group-item">[DELETE] /logger/delall - Para borrar todos los logs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

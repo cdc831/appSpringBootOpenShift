@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Logs Que Joraca Pasa </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron" mt-5>
+        <h1 class="display-4">Que joraca pasa!</h1>
+        <p class="lead">Simple control de Logs para saber que esta pasando. d;P</p>
+        <hr class="my-4">
+        <p>Preciona el boton para listar los logs ingresados o borra el historial, tambien podes usar un cliente rest como <a href="https://insomnia.rest/">Insomnia</a>, <a href="https://www.postman.com/">Postman</a>, etc. </p>
+        <a th:href="@{/}"><button type="button" class="btn btn-primary btn-lg btn-block">volver</button></a>
+        <hr class="my-4">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Clave</th>
+                <th scope="col">Valor</th>
+                <th scope="col">opcional</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="Item : ${listaDeLogs}">
+                <th scope="row" th:text="${Item.id}"></th>
+                <td th:text="${Item.clave}"></td>
+                <td th:text="${Item.valor}"></td>
+                <td th:text="${Item.opcional}"></td>
+                <td th:text="${Item.fechaCreado}"></td>
+                <td th:text="${Item.horaCreada}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
