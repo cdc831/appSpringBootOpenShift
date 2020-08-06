@@ -4,10 +4,12 @@ import net.sytes.canterosoft.logger.Entity.Loggerdb;
 import net.sytes.canterosoft.logger.Services.LoggerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.List;
 
 @RestController
+@EnableSwagger2
 @RequestMapping("/logger")
 public class LoggerController {
     @Autowired
